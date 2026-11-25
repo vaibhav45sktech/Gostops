@@ -22,7 +22,7 @@ There are ten travel types and seven cat images. Each final card shows **one** c
 
 ## Made to leave the app
 
-Every page can be exported as a 1080 × 1920 PNG. The final cat card has its own share button. On supported devices, the app hands the image to the native share sheet. Where that is unavailable, it saves the image so you can attach it to an Instagram Story, WhatsApp, X, or LinkedIn post. The final tap to publish stays with you.
+Every page can be exported as a 1080 × 1920 PNG. The final cat card has its own share button. The IG Story and WA Status buttons prepare the **entire edition**, from front page through cat reveal, as one portrait MP4 on browsers that support recording it. On a compatible phone, the app opens the native share sheet with that video; the user chooses Instagram Stories or WhatsApp Status and confirms the post. If MP4 sharing is unavailable, it saves the video or all the pages for upload from the gallery. Browsers cannot select a social app's Story or Status composer or publish on the user's behalf.
 
 No account is required. Full-size photos stay on your device. Only small, 512 px thumbnails are sent to the AI provider for story copy; the app does not store your photos or edition.
 
