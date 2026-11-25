@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>The Times of Travel — your 2026, in print</title>
+  <meta name="description" content="Upload your travel photos. We print your year as a front page and a story you'll actually post.">
+  <meta property="og:title" content="The Times of Travel — your 2026, in print">
+  <meta property="og:description" content="Upload your travel photos. We print your year as a story you'll actually post.">
+  <meta name="theme-color" content="#FFFDF7">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="app">
+
+    <!-- Landing -->
+    <section class="screen is-active" data-screen="landing">
+      <div class="stack">
+        <header class="masthead">
+          <div class="mast-rule"></div>
+          <h1 class="mast-title">The Times of Travel</h1>
+          <div class="mast-date">VOL. 2026 · YOUR YEAR, IN PRINT · ONE MINUTE TO MAKE</div>
+          <div class="mast-rule mast-rule-thin"></div>
+        </header>
+        <div class="color-band" aria-hidden="true">
+          <i class="cb-yellow"></i><i class="cb-teal"></i><i class="cb-purple"></i><i class="cb-pink"></i><i class="cb-orange"></i>
+        </div>
+        <div class="spacer"></div>
+        <h2 class="landing-title">Your travel year, as a front page you'll actually post.</h2>
+        <p class="muted">Upload a few photos. We print your story. No sign-up.</p>
+        <div class="spacer"></div>
+        <button class="btn btn-primary" id="btnStart">Print my year</button>
+        <p class="counter" id="counter">&nbsp;</p>
+        <p class="disclaimer">Built by [YOUR NAME] for the goSTOPS Build Sprint.<br>Not an official goSTOPS product.</p>
+      </div>
+    </section>
+
+    <!-- Upload -->
+    <section class="screen" data-screen="upload">
+      <div class="stack">
+        <div class="row-between">
+          <div class="eyebrow eb-ink">THE TIMES OF TRAVEL</div>
+          <div class="eyebrow">STEP 1 OF 2</div>
+        </div>
+        <h2>Pick your travel photos</h2>
+        <p class="muted">2–8 photos works best. The order you pick them is the order of your year.</p>
+        <input type="file" id="fileInput" accept="image/*" multiple hidden>
+        <div id="uploadEmpty">
+          <button class="btn btn-primary" id="btnPick">Choose photos</button>
+        </div>
+        <div id="thumbWrap" hidden>
+          <div class="thumb-grid" id="thumbGrid"></div>
+          <p class="counter" id="photoCount"></p>
+          <button class="btn btn-ghost" id="btnAddMore">Add more</button>
+        </div>
+        <p class="muted" id="uploadBusy" hidden>Preparing your photos…</p>
+        <div class="spacer"></div>
+        <button class="btn btn-primary" id="btnToName" disabled>Continue</button>
+        <button class="btn btn-ghost" id="btnUploadBack">Back</button>
+      </div>
+    </section>
+
+    <!-- Name the places -->
+    <section class="screen" data-screen="name">
+      <div class="stack">
+        <div class="row-between">
+          <div class="eyebrow eb-ink">THE TIMES OF TRAVEL</div>
+          <div class="eyebrow" id="nameStep"></div>
+        </div>
+        <img id="nameImg" class="name-img" alt="your photo">
+        <h2 class="h-sm">Where was this?</h2>
+        <input id="placeInput" class="text-input" type="text" placeholder="Type the city or town" autocomplete="off">
+        <div id="sugList" class="sug-list"></div>
+        <div class="spacer"></div>
+        <button class="btn btn-primary" id="btnNameNext" disabled>Next</button>
+        <button class="btn btn-ghost" id="btnNameBack">Back</button>
+      </div>
+    </section>
+
+    <!-- Printing / loading -->
+    <section class="screen" data-screen="loading">
+      <div class="stack">
+        <div class="eyebrow eb-ink">THE TIMES OF TRAVEL</div>
+        <div class="spacer"></div>
+        <div class="load-tiles" aria-hidden="true">
+          <i class="cb-yellow"></i><i class="cb-teal"></i><i class="cb-purple"></i><i class="cb-pink"></i><i class="cb-orange"></i>
+        </div>
+        <h2 class="h-sm" id="loadStatus">printing your year…</h2>
+        <p class="muted">your photos stay on your device — only tiny thumbnails go to the editor.</p>
+        <div class="spacer"></div>
+      </div>
+    </section>
+
+    <!-- Story viewer -->
+    <section class="screen" data-screen="story">
+      <div id="storyRoot"></div>
+    </section>
+
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
