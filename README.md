@@ -1,55 +1,45 @@
 # The Times of Travel
 
-Upload a few travel photos, get a newspaper-style story to post.
-Built for the goSTOPS Build Sprint.
+**Your year went places. Now it gets a front page.**
 
-## Run locally
+Every trip ends the same way: a camera roll full of proof, a group chat asking for photos, and a promise to make a post later. Later rarely arrives. The mountains, the wrong turns, the perfect snack, and the friend who took 46 versions of one picture disappear into a folder called *Recent*.
 
-From this project folder:
+The goSTOPS Build Sprint asked a good question: **what would make someone want to share their travel story?**
 
-    python dev-server.py
+Spotify Wrapped showed how an ordinary record of a year can become something personal enough to post. Zomato and Blinkit wandered into the brainstorming room as two side characters with their cheeky lines and bold, screenshot-worthy cards. We took that energy to the one archive almost everyone already has: their travel photos.
 
-Then open <http://localhost:8000/>. The script serves the site *and* runs `/api/story`
-locally, so the AI copy works without deploying. It reads `LLM_API_KEY` from `.env`.
+That is how **The Times of Travel** began. It gives your year on the road its own tiny newspaper edition, written for an audience of one and made to travel further.
 
-## Deploy to Vercel
+## How your edition gets printed
 
-1. Create an empty GitHub repo, then:
+You pick up to eight travel photos and name the places. The order of the photos becomes the order of your story. Then the travel desk gets to work:
 
-       git remote add origin https://github.com/<you>/<repo>.git
-       git branch -M main
-       git push -u origin main
+1. **The front page** turns your photos into a colorful newspaper mosaic with a headline for the whole year.
+2. **The inside pages** give each stop a photo print and a short, cheeky one-liner. AI writes the copy when available; a hand-written line library is ready when it is not.
+3. **The last page** reveals your travel type as a cat meme card. You might be *The Altitude Attitude*, *The Repeat Offender*, or *The Map Tab Menace*. Places give relevant types better odds, and a little randomness keeps the reveal fun. Tap **Another cat** if the travel desk needs a second opinion.
 
-2. In Vercel: **Add New → Project → import that repo**.
-   Framework preset: **Other**. No build command. Output directory: leave blank.
-3. **Settings → Environment Variables** → add `LLM_API_KEY` (your Anthropic or OpenAI key).
-   Optionally `LLM_MODEL` to override the default.
-4. Deploy. Any later `git push` redeploys automatically.
+There are ten travel types and seven cat images. Each final card shows **one** cat image, one title, and one line made for sharing.
 
-## How it works
+## Made to leave the app
 
-- `index.html` / `styles.css` / `app.js` — the four screens and the flow
-- `lib/photos.js` — reads photos, downscales to 1600px on the device
-- `lib/cities.js` — India-first autocomplete list
-- `lib/lines.js` — the hardcoded line library (hook + payoff pairs)
-- `lib/ai.js` — sends 512px thumbnails to `/api/story`, validates the reply
-- `lib/mosaic.js` — the front-page photo mosaic
-- `lib/story.js` — the full-screen story viewer and share controls
-- `lib/personas.js` — ten playful travel types, weighted by places and varied on each reveal
-- `assets/cats/` — the seven cat memes used on the final card
-- `lib/export.js` — redraws every page onto a 1080x1920 canvas
-- `lib/share.js` — Instagram / WhatsApp / X / LinkedIn targets
-- `api/story.js` — the serverless function (auto-detects Anthropic vs OpenAI key)
-- `dev-server.py` — local stand-in for that function, stdlib only
+Every page can be exported as a 1080 × 1920 PNG. The final cat card has its own share button. On supported devices, the app hands the image to the native share sheet. Where that is unavailable, it saves the image so you can attach it to an Instagram Story, WhatsApp, X, or LinkedIn post. The final tap to publish stays with you.
 
-Full-size photos never leave the device. Only 512px thumbnails are sent to the
-model, and nothing is stored anywhere.
+No account is required. Full-size photos stay on your device. Only small, 512 px thumbnails are sent to the AI provider for story copy; the app does not store your photos or edition.
 
-## Phases
+## Run your own press
 
-- [x] 0 Scaffold
-- [x] 1 Core journey
-- [x] 2 AI copy, with the line library as fallback
-- [x] 3 Canvas export + share
-- [x] 4 Deploy config
-- [ ] 5 Distribution + submission
+This is a small static site with vanilla JavaScript and CSS, a Vercel story endpoint, and a Python development server. There is no build step or package install.
+
+From the project folder:
+
+```bash
+python dev-server.py
+```
+
+Open [http://localhost:8000/](http://localhost:8000/). For AI copy, copy `.env.example` to `.env` and set `LLM_API_KEY` to an Anthropic or OpenAI key. You can set `LLM_MODEL` to override the default. Without a key, the local app still works using its line library.
+
+## Put it on the newsstand
+
+Import this repository into Vercel with the **Other** framework preset. Leave the build command and output directory blank. Add `LLM_API_KEY` under **Settings → Environment Variables**, and optionally `LLM_MODEL`, then deploy.
+
+Built for the **goSTOPS Build Sprint**. Zomato, Blinkit, and Spotify Wrapped are creative references, not collaborators or sponsors. This is not an official goSTOPS product.
