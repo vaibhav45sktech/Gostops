@@ -271,10 +271,11 @@ h2 { font-size: 26px; line-height: 1.15; }
 .persona-copy { padding: 10px 14px 12px; }
 .persona-line { font-size: clamp(16px, 2.3dvh, 22px); font-weight: 700; line-height: 1.08; letter-spacing: -.025em; }
 .persona-receipt { margin-top: 7px; font-family: var(--font-mono); font-size: 8px; line-height: 1.25; opacity: .78; }
+.persona-next { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-top: 8px; padding-top: 8px; border-top: 1px solid currentColor; font-family: var(--font-mono); font-size: 8px; font-weight: 700; line-height: 1.25; letter-spacing: .2px; }
+.persona-next a { color: inherit; white-space: nowrap; text-underline-offset: 2px; }
 .cl-actions { padding: 8px 12px calc(9px + env(safe-area-inset-bottom)); display: flex; flex-direction: column; gap: 6px; }
 .persona-card .cl-actions .btn { min-height: 38px; font-size: 14px; }
-.persona-utility { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
-.persona-card .persona-utility .btn { min-height: 30px; font-size: 12px; }
+.persona-card #btnRestart { min-height: 30px; font-size: 12px; }
 .persona-card .disclaimer { font-size: 7px; }
 
 /* ---------- loading / printing ---------- */

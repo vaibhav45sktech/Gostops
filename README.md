@@ -16,7 +16,7 @@ You pick up to eight travel photos and name the places. The order of the photos 
 
 1. **The front page** turns your photos into a colorful newspaper mosaic with a headline for the whole year.
 2. **The inside pages** give each stop a photo print and a short, cheeky one-liner. AI writes the copy when available; a hand-written line library is ready when it is not.
-3. **The last page** reveals your travel type as a cat meme card. You might be *The Altitude Attitude*, *The Repeat Offender*, or *The Map Tab Menace*. Places give relevant types better odds, and a little randomness keeps the reveal fun. Tap **Another cat** if the travel desk needs a second opinion.
+3. **The last page** reveals your travel type as a cat meme card. You might be *The Altitude Attitude*, *The Repeat Offender*, or *The Map Tab Menace*. Places give relevant types better odds, and a little randomness keeps the reveal fun. Your next chapter then suggests a matching goSTOPS destination to explore.
 
 There are ten travel types and seven cat images. Each final card shows **one** cat image, one title, and one line made for sharing.
 
